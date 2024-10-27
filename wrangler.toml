@@ -1,0 +1,33 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "cloudflare-workflows-examples"
+main = "src/index.ts"
+compatibility_date = "2024-10-22"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+head_sampling_rate = 1 # optional. default = 1.
+
+[[workflows]]
+name = "with-retry-workflow"
+binding = "WITH_RETRY_WORKFLOW"
+class_name = "WithRetryWorkflow"
+
+[[workflows]]
+name = "payment-provider-a-workflow"
+binding = "PAYMENT_PROVIDER_A_WORKFLOW"
+class_name = "PaymentProviderAWorkflow"
+
+[[workflows]]
+name = "payment-provider-b-workflow"
+binding = "PAYMENT_PROVIDER_B_WORKFLOW"
+class_name = "PaymentProviderBWorkflow"
+
+[[workflows]]
+name = "payment-batch-workflow"
+binding = "PAYMENT_BATCH_WORKFLOW"
+class_name = "PaymentBatchWorkflow"
+
+[[kv_namespaces]]
+binding = "WORKFLOW_EXAMPLES"
+id = "d76b49110ee2491b99852be2e1dd86f8"
